@@ -11,6 +11,9 @@ const server = Bun.serve({
         if (url.pathname === "/about"){
             return new Response("About me!")
         }
+        if (url.pathname === "/greet"){
+            return new Response(Bun.file('./greet.txt'))
+        }
         if (url.pathname === "/error"){
             return new Error("Application encountered an error")
         }
